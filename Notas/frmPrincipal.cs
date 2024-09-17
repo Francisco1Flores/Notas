@@ -37,6 +37,64 @@ namespace Notas
             VerPanelNotas(true);
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Nota NuevaNota = new Nota(txtNuevoTitulo.Text, txtNuevoTexto.Text, this);
+
+            ContenedorNotas.SuspendLayout();
+
+            ContenedorNotas.Controls.Add(NuevaNota);
+
+            NuevaNota.Visible = true;
+            NuevaNota.Enabled = true;
+
+            ContenedorNotas.ResumeLayout(false);
+
+            BorrarPantallaNota();
+            VerPanelNotas(true);
+
+            CantidadNotas++;
+            if (CantidadNotas > 8 && ContenedorNotas.AutoScroll == false)
+            {
+                ContenedorNotas.AutoScroll = true;
+            }
+        }
+
+        private void btnModificarNota_Click(object sender, EventArgs e)
+        {
+            if (NotaSeleccionada == null)
+            {
+                return;
+            }
+            NotaSeleccionada.lblTitulo.Text = txtNuevoTitulo.Text;
+            NotaSeleccionada.lblTexto.Text = txtNuevoTexto.Text;
+            NotaSeleccionada.lblFechaHora.Text = "Mod " + DateTime.Now.ToString();
+
+            NotaSeleccionada = null;
+
+            BorrarPantallaNota();
+            VerPanelNotas(true);
+        }
+
+        private void btnEliminarNota_Click(object sender, EventArgs e)
+        {
+            if (NotaSeleccionada == null)
+            {
+                return;
+            }
+
+            CantidadNotas--;
+
+            ContenedorNotas.Controls.Remove(NotaSeleccionada);
+            NotaSeleccionada = null;
+            BorrarPantallaNota();
+            VerPanelNotas(true);
+
+            if (ContenedorNotas.AutoScroll == true && CantidadNotas <= 8)
+            {
+                ContenedorNotas.AutoScroll = false;
+            }
+        }
 
         private void VerPanelNotas(bool opcion)
         {
@@ -70,30 +128,6 @@ namespace Notas
             btnCancelar.Visible = true;
             btnCancelar.Enabled = true;            
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {                        
-            Nota NuevaNota = new Nota(txtNuevoTitulo.Text, txtNuevoTexto.Text, this);
-
-            ContenedorNotas.SuspendLayout();
-
-            ContenedorNotas.Controls.Add(NuevaNota);
-            
-            NuevaNota.Visible = true;
-            NuevaNota.Enabled = true;                     
-
-            ContenedorNotas.ResumeLayout(false);
-            
-            BorrarPantallaNota();
-            VerPanelNotas(true);
-
-            CantidadNotas++;
-            if (CantidadNotas > 8 && ContenedorNotas.AutoScroll == false)
-            {
-                ContenedorNotas.AutoScroll = true;
-            }
-        }
-
 
         public void AbrirNotaSeleccionada(Nota NotaSeleccionada)
         {
@@ -157,42 +191,6 @@ namespace Notas
             btnModificarNota.Visible = false;
             btnModificarNota.Enabled = false;
 
-        }
-
-        private void btnModificarNota_Click(object sender, EventArgs e)
-        {
-            if (NotaSeleccionada == null)
-            {
-                return;
-            }
-            NotaSeleccionada.lblTitulo.Text = txtNuevoTitulo.Text;
-            NotaSeleccionada.lblTexto.Text = txtNuevoTexto.Text;
-            NotaSeleccionada.lblFechaHora.Text = "Mod " + DateTime.Now.ToString();
-
-            NotaSeleccionada = null;
-
-            BorrarPantallaNota();
-            VerPanelNotas(true);
-        }
-
-        private void btnEliminarNota_Click(object sender, EventArgs e)
-        {
-            if (NotaSeleccionada == null)
-            {
-                return;
-            }
-
-            CantidadNotas--;
-
-            ContenedorNotas.Controls.Remove(NotaSeleccionada);
-            NotaSeleccionada = null;
-            BorrarPantallaNota();
-            VerPanelNotas(true);
-
-            if (ContenedorNotas.AutoScroll == true && CantidadNotas <= 8)
-            {
-                ContenedorNotas.AutoScroll = false;
-            }
         }
     }
 }

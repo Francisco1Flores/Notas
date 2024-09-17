@@ -83,10 +83,10 @@
             this.txtNuevoTexto.Location = new System.Drawing.Point(283, 125);
             this.txtNuevoTexto.Multiline = true;
             this.txtNuevoTexto.Name = "txtNuevoTexto";
+            this.txtNuevoTexto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNuevoTexto.Size = new System.Drawing.Size(208, 183);
             this.txtNuevoTexto.TabIndex = 4;
             this.txtNuevoTexto.Visible = false;
-            this.txtNuevoTexto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             // 
             // btnGuardar
             // 
@@ -161,9 +161,11 @@
             // lblTituloPrincipal
             // 
             this.lblTituloPrincipal.AutoSize = true;
+            this.lblTituloPrincipal.Font = new System.Drawing.Font("Arial", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloPrincipal.ForeColor = System.Drawing.Color.Teal;
             this.lblTituloPrincipal.Location = new System.Drawing.Point(37, 19);
             this.lblTituloPrincipal.Name = "lblTituloPrincipal";
-            this.lblTituloPrincipal.Size = new System.Drawing.Size(90, 13);
+            this.lblTituloPrincipal.Size = new System.Drawing.Size(172, 23);
             this.lblTituloPrincipal.TabIndex = 13;
             this.lblTituloPrincipal.Text = "Guarda tus Notas";
             // 
