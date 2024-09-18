@@ -148,16 +148,16 @@ namespace Notas
             txtTextoNota.Visible = true;            
             txtTextoNota.Enabled = true;
                                   
-            this.btnModificarNota.Enabled = true;
-            this.btnModificarNota.Visible = true;
+            btnModificarNota.Enabled = true;
+            btnModificarNota.Visible = true;
 
-            this.btnCancelar.Left = this.btnModificarNota.Left + this.btnModificarNota.Width + 10;
-            this.btnCancelar.Visible = true;
-            this.btnCancelar.Enabled = true;
+            btnCancelar.Left = btnModificarNota.Left + btnModificarNota.Width + 10;
+            btnCancelar.Visible = true;
+            btnCancelar.Enabled = true;
 
-            this.btnEliminarNota.Left = this.btnCancelar.Left + 75 + 10;
-            this.btnEliminarNota.Visible = true;
-            this.btnEliminarNota.Enabled = true;
+            btnEliminarNota.Left = btnCancelar.Left + 75 + 10;
+            btnEliminarNota.Visible = true;
+            btnEliminarNota.Enabled = true;
         }
 
         public void BorrarPantallaNota()
