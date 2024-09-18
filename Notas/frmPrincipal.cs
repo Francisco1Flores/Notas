@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Notas
 {
-    public partial class Notas : Form
+    public partial class frmPrincipal : Form
     {        
         Nota NotaSeleccionada { get; set; }
 
         int CantidadNotas = 0;    
 
-        public Notas()
+        public frmPrincipal()
         {
             NotaSeleccionada = null;
             InitializeComponent();
@@ -30,8 +30,8 @@ namespace Notas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtNuevoTexto.Text = string.Empty;
-            txtNuevoTitulo.Text = string.Empty;
+            txtTextoNota.Text = string.Empty;
+            txtTituloNota.Text = string.Empty;
             NotaSeleccionada = null;
             BorrarPantallaNota();            
             VerPanelNotas(true);
@@ -39,24 +39,20 @@ namespace Notas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Nota NuevaNota = new Nota(txtNuevoTitulo.Text, txtNuevoTexto.Text, this);
+            Nota NuevaNota = new Nota(txtTituloNota.Text, txtTextoNota.Text, this);            
 
-            ContenedorNotas.SuspendLayout();
-
-            ContenedorNotas.Controls.Add(NuevaNota);
+            pnlContenedorNotas.Controls.Add(NuevaNota);
 
             NuevaNota.Visible = true;
-            NuevaNota.Enabled = true;
-
-            ContenedorNotas.ResumeLayout(false);
+            NuevaNota.Enabled = true;            
 
             BorrarPantallaNota();
             VerPanelNotas(true);
 
             CantidadNotas++;
-            if (CantidadNotas > 8 && ContenedorNotas.AutoScroll == false)
+            if (CantidadNotas > 8 && pnlContenedorNotas.AutoScroll == false)
             {
-                ContenedorNotas.AutoScroll = true;
+                pnlContenedorNotas.AutoScroll = true;                                
             }
         }
 
@@ -66,8 +62,8 @@ namespace Notas
             {
                 return;
             }
-            NotaSeleccionada.lblTitulo.Text = txtNuevoTitulo.Text;
-            NotaSeleccionada.lblTexto.Text = txtNuevoTexto.Text;
+            NotaSeleccionada.lblTitulo.Text = txtTituloNota.Text;
+            NotaSeleccionada.lblTexto.Text = txtTextoNota.Text;
             NotaSeleccionada.lblFechaHora.Text = "Mod " + DateTime.Now.ToString();
 
             NotaSeleccionada = null;
@@ -81,19 +77,24 @@ namespace Notas
             if (NotaSeleccionada == null)
             {
                 return;
-            }
+            }            
 
+            pnlContenedorNotas.Controls.Remove(NotaSeleccionada);
             CantidadNotas--;
-
-            ContenedorNotas.Controls.Remove(NotaSeleccionada);
             NotaSeleccionada = null;
             BorrarPantallaNota();
             VerPanelNotas(true);
 
-            if (ContenedorNotas.AutoScroll == true && CantidadNotas <= 8)
+            if (pnlContenedorNotas.AutoScroll == true && CantidadNotas <= 8)
             {
-                ContenedorNotas.AutoScroll = false;
+                pnlContenedorNotas.AutoScroll = false;                                
             }
+        }
+
+        public void AbrirNotaSeleccionada(Nota NotaSeleccionada)
+        {
+            VerPanelNotas(false);
+            verPanelModificarNota(NotaSeleccionada, true);
         }
 
         private void VerPanelNotas(bool opcion)
@@ -101,8 +102,8 @@ namespace Notas
             btnNuevaNota.Enabled = opcion;
             btnNuevaNota.Visible = opcion;            
 
-            ContenedorNotas.Enabled = opcion;
-            ContenedorNotas.Visible = opcion;
+            pnlContenedorNotas.Enabled = opcion;
+            pnlContenedorNotas.Visible = opcion;
         }
 
         private void VerPanelNuevaNota()
@@ -113,26 +114,20 @@ namespace Notas
             lblTexto.Visible = true;
             lblTexto.Enabled = true;
 
-            txtNuevoTitulo.Visible = true;
-            txtNuevoTitulo.Enabled = true;
-            txtNuevoTitulo.Text = "";           
+            txtTituloNota.Visible = true;
+            txtTituloNota.Enabled = true;
+            txtTituloNota.Clear();
 
-            txtNuevoTexto.Visible = true;
-            txtNuevoTexto.Enabled = true;
-            txtNuevoTexto.Text = "";
+            txtTextoNota.Visible = true;
+            txtTextoNota.Enabled = true;
+            txtTextoNota.Clear();
             
             btnGuardar.Visible = true;
             btnGuardar.Enabled = true;
             
-            btnCancelar.Left = txtNuevoTexto.Left + txtNuevoTexto.Width - btnCancelar.Width;
+            btnCancelar.Left = txtTextoNota.Left + txtTextoNota.Width - btnCancelar.Width;
             btnCancelar.Visible = true;
             btnCancelar.Enabled = true;            
-        }
-
-        public void AbrirNotaSeleccionada(Nota NotaSeleccionada)
-        {
-            VerPanelNotas(false);
-            verPanelModificarNota(NotaSeleccionada, true);
         }
 
         public void verPanelModificarNota(Nota nota, bool opcion)
@@ -145,13 +140,13 @@ namespace Notas
             lblTexto.Visible = true;
             lblTexto.Enabled = true;
 
-            txtNuevoTitulo.Text = nota.lblTitulo.Text;
-            txtNuevoTitulo.Visible = true;
-            txtNuevoTitulo.Enabled = true;
+            txtTituloNota.Text = nota.lblTitulo.Text;
+            txtTituloNota.Visible = true;
+            txtTituloNota.Enabled = true;
 
-            txtNuevoTexto.Text = nota.lblTexto.Text;
-            txtNuevoTexto.Visible = true;            
-            txtNuevoTexto.Enabled = true;
+            txtTextoNota.Text = nota.lblTexto.Text;
+            txtTextoNota.Visible = true;            
+            txtTextoNota.Enabled = true;
                                   
             this.btnModificarNota.Enabled = true;
             this.btnModificarNota.Visible = true;
@@ -173,11 +168,11 @@ namespace Notas
             lblTexto.Visible = false;
             lblTexto.Enabled = false;
 
-            txtNuevoTitulo.Visible = false;
-            txtNuevoTitulo.Enabled = false;
+            txtTituloNota.Visible = false;
+            txtTituloNota.Enabled = false;
             
-            txtNuevoTexto.Visible = false;
-            txtNuevoTexto.Enabled = false;
+            txtTextoNota.Visible = false;
+            txtTextoNota.Enabled = false;
 
             btnGuardar.Visible = false;
             btnGuardar.Enabled = false;

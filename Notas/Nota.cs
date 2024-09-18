@@ -9,18 +9,18 @@ namespace Notas
 {
     public class Nota : Panel
     {       
-        Notas frm;
+        frmPrincipal frmVentanaPrincipal;
 
-        int Ancho = 160;
-        int Alto = 152;        
+        const int Ancho = 160;
+        const int Alto = 152;        
 
         public Label lblTitulo {  get; set; }
         public Label lblTexto { get; set; }
         public Label lblFechaHora {  get; set; }
 
-        public Nota(string Titulo, string Texto, Notas frmPadre)
+        public Nota(string Titulo, string Texto, frmPrincipal frmPadre)
         {
-            this.frm = frmPadre;
+            this.frmVentanaPrincipal = frmPadre;
 
             this.Click += new EventHandler(this.AbrirNotaClick);
 
@@ -79,8 +79,8 @@ namespace Notas
         }
 
         public void AbrirNotaClick(object sender, EventArgs e)
-        {            
-            frm.AbrirNotaSeleccionada(this);
+        {
+            frmVentanaPrincipal.AbrirNotaSeleccionada(this);
         }
     }
 }

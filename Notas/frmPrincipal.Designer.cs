@@ -1,6 +1,6 @@
 ﻿namespace Notas
 {
-    partial class Notas
+    partial class frmPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,11 +30,11 @@
         {
             this.btnNuevaNota = new System.Windows.Forms.Button();
             this.btnEliminarNota = new System.Windows.Forms.Button();
-            this.txtNuevoTitulo = new System.Windows.Forms.TextBox();
-            this.txtNuevoTexto = new System.Windows.Forms.TextBox();
+            this.txtTituloNota = new System.Windows.Forms.TextBox();
+            this.txtTextoNota = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.ContenedorNotas = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlContenedorNotas = new System.Windows.Forms.FlowLayoutPanel();
             this.btnModificarNota = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblTexto = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             // btnNuevaNota
             // 
             this.btnNuevaNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaNota.Location = new System.Drawing.Point(310, 19);
+            this.btnNuevaNota.Location = new System.Drawing.Point(315, 19);
             this.btnNuevaNota.Name = "btnNuevaNota";
             this.btnNuevaNota.Size = new System.Drawing.Size(150, 23);
             this.btnNuevaNota.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.btnEliminarNota.BackColor = System.Drawing.Color.Red;
             this.btnEliminarNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarNota.Enabled = false;
-            this.btnEliminarNota.Location = new System.Drawing.Point(428, 314);
+            this.btnEliminarNota.Location = new System.Drawing.Point(419, 314);
             this.btnEliminarNota.Name = "btnEliminarNota";
             this.btnEliminarNota.Size = new System.Drawing.Size(86, 23);
             this.btnEliminarNota.TabIndex = 1;
@@ -68,25 +68,25 @@
             // 
             // txtNuevoTitulo
             // 
-            this.txtNuevoTitulo.Enabled = false;
-            this.txtNuevoTitulo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNuevoTitulo.Location = new System.Drawing.Point(283, 86);
-            this.txtNuevoTitulo.Name = "txtNuevoTitulo";
-            this.txtNuevoTitulo.Size = new System.Drawing.Size(208, 20);
-            this.txtNuevoTitulo.TabIndex = 3;
-            this.txtNuevoTitulo.Visible = false;
+            this.txtTituloNota.Enabled = false;
+            this.txtTituloNota.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtTituloNota.Location = new System.Drawing.Point(283, 86);
+            this.txtTituloNota.Name = "txtNuevoTitulo";
+            this.txtTituloNota.Size = new System.Drawing.Size(208, 20);
+            this.txtTituloNota.TabIndex = 3;
+            this.txtTituloNota.Visible = false;
             // 
             // txtNuevoTexto
             // 
-            this.txtNuevoTexto.Enabled = false;
-            this.txtNuevoTexto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNuevoTexto.Location = new System.Drawing.Point(283, 125);
-            this.txtNuevoTexto.Multiline = true;
-            this.txtNuevoTexto.Name = "txtNuevoTexto";
-            this.txtNuevoTexto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNuevoTexto.Size = new System.Drawing.Size(208, 183);
-            this.txtNuevoTexto.TabIndex = 4;
-            this.txtNuevoTexto.Visible = false;
+            this.txtTextoNota.Enabled = false;
+            this.txtTextoNota.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtTextoNota.Location = new System.Drawing.Point(283, 125);
+            this.txtTextoNota.Multiline = true;
+            this.txtTextoNota.Name = "txtNuevoTexto";
+            this.txtTextoNota.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTextoNota.Size = new System.Drawing.Size(208, 183);
+            this.txtTextoNota.TabIndex = 4;
+            this.txtTextoNota.Visible = false;
             // 
             // btnGuardar
             // 
@@ -106,7 +106,7 @@
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Enabled = false;
-            this.btnCancelar.Location = new System.Drawing.Point(347, 314);
+            this.btnCancelar.Location = new System.Drawing.Point(338, 314);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -117,16 +117,16 @@
             // 
             // ContenedorNotas
             // 
-            this.ContenedorNotas.Location = new System.Drawing.Point(12, 48);
-            this.ContenedorNotas.Name = "ContenedorNotas";
-            this.ContenedorNotas.Size = new System.Drawing.Size(776, 390);
-            this.ContenedorNotas.TabIndex = 0;
+            this.pnlContenedorNotas.Location = new System.Drawing.Point(12, 48);
+            this.pnlContenedorNotas.Name = "ContenedorNotas";
+            this.pnlContenedorNotas.Size = new System.Drawing.Size(784, 390);
+            this.pnlContenedorNotas.TabIndex = 0;
             // 
             // btnModificarNota
             // 
             this.btnModificarNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarNota.Enabled = false;
-            this.btnModificarNota.Location = new System.Drawing.Point(266, 314);
+            this.btnModificarNota.Location = new System.Drawing.Point(257, 314);
             this.btnModificarNota.Name = "btnModificarNota";
             this.btnModificarNota.Size = new System.Drawing.Size(75, 23);
             this.btnModificarNota.TabIndex = 10;
@@ -169,23 +169,23 @@
             this.lblTituloPrincipal.TabIndex = 13;
             this.lblTituloPrincipal.Text = "Guarda tus Notas";
             // 
-            // Notas
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 450);
             this.Controls.Add(this.lblTituloPrincipal);
             this.Controls.Add(this.lblTexto);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnModificarNota);
-            this.Controls.Add(this.ContenedorNotas);
+            this.Controls.Add(this.pnlContenedorNotas);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtNuevoTexto);
+            this.Controls.Add(this.txtTextoNota);
             this.Controls.Add(this.btnEliminarNota);
             this.Controls.Add(this.btnNuevaNota);
-            this.Controls.Add(this.txtNuevoTitulo);
-            this.Name = "Notas";
+            this.Controls.Add(this.txtTituloNota);
+            this.Name = "frmPrincipal";
             this.Text = "Notas";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,11 +196,11 @@
 
         private System.Windows.Forms.Button btnNuevaNota;
         private System.Windows.Forms.Button btnEliminarNota;
-        private System.Windows.Forms.TextBox txtNuevoTitulo;
-        private System.Windows.Forms.TextBox txtNuevoTexto;
+        private System.Windows.Forms.TextBox txtTituloNota;
+        private System.Windows.Forms.TextBox txtTextoNota;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.FlowLayoutPanel ContenedorNotas;
+        private System.Windows.Forms.FlowLayoutPanel pnlContenedorNotas;
         private System.Windows.Forms.Button btnModificarNota;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblTexto;
