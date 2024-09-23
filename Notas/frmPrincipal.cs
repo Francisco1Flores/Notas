@@ -14,7 +14,7 @@ namespace Notas
     {        
         Nota NotaSeleccionada { get; set; }
 
-        int CantidadNotas = 0;    
+        int CantidadNotas = 0;
 
         public frmPrincipal()
         {
@@ -30,21 +30,18 @@ namespace Notas
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtTextoNota.Text = string.Empty;
-            txtTituloNota.Text = string.Empty;
+            txtTextoNota.Clear();
+            txtTituloNota.Clear();
             NotaSeleccionada = null;
-            BorrarPantallaNota();            
+            BorrarPantallaNota();
             VerPanelNotas(true);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Nota NuevaNota = new Nota(txtTituloNota.Text, txtTextoNota.Text, this);            
+            Nota NuevaNota = new Nota(txtTituloNota.Text, txtTextoNota.Text, this);
 
-            pnlContenedorNotas.Controls.Add(NuevaNota);
-
-            NuevaNota.Visible = true;
-            NuevaNota.Enabled = true;            
+            pnlContenedorNotas.Controls.Add(NuevaNota);            
 
             BorrarPantallaNota();
             VerPanelNotas(true);
@@ -52,7 +49,7 @@ namespace Notas
             CantidadNotas++;
             if (CantidadNotas > 8 && pnlContenedorNotas.AutoScroll == false)
             {
-                pnlContenedorNotas.AutoScroll = true;                                
+                pnlContenedorNotas.AutoScroll = true;
             }
         }
 
@@ -62,10 +59,9 @@ namespace Notas
             {
                 return;
             }
-            NotaSeleccionada.lblTitulo.Text = txtTituloNota.Text;
-            NotaSeleccionada.lblTexto.Text = txtTextoNota.Text;
-            NotaSeleccionada.lblFechaHora.Text = "Mod " + DateTime.Now.ToString();
 
+            NotaSeleccionada.Actualizar(txtTituloNota.Text, txtTextoNota.Text);
+            
             NotaSeleccionada = null;
 
             BorrarPantallaNota();
@@ -185,7 +181,6 @@ namespace Notas
 
             btnModificarNota.Visible = false;
             btnModificarNota.Enabled = false;
-
         }
     }
 }

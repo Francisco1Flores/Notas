@@ -66,23 +66,23 @@
             this.btnEliminarNota.Visible = false;
             this.btnEliminarNota.Click += new System.EventHandler(this.btnEliminarNota_Click);
             // 
-            // txtNuevoTitulo
+            // txtTituloNota
             // 
             this.txtTituloNota.Enabled = false;
             this.txtTituloNota.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTituloNota.Location = new System.Drawing.Point(283, 86);
-            this.txtTituloNota.Name = "txtNuevoTitulo";
+            this.txtTituloNota.Name = "txtTituloNota";
             this.txtTituloNota.Size = new System.Drawing.Size(208, 20);
             this.txtTituloNota.TabIndex = 3;
             this.txtTituloNota.Visible = false;
             // 
-            // txtNuevoTexto
+            // txtTextoNota
             // 
             this.txtTextoNota.Enabled = false;
             this.txtTextoNota.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTextoNota.Location = new System.Drawing.Point(283, 125);
             this.txtTextoNota.Multiline = true;
-            this.txtTextoNota.Name = "txtNuevoTexto";
+            this.txtTextoNota.Name = "txtTextoNota";
             this.txtTextoNota.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtTextoNota.Size = new System.Drawing.Size(208, 183);
             this.txtTextoNota.TabIndex = 4;
@@ -115,10 +115,10 @@
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // ContenedorNotas
+            // pnlContenedorNotas
             // 
             this.pnlContenedorNotas.Location = new System.Drawing.Point(12, 48);
-            this.pnlContenedorNotas.Name = "ContenedorNotas";
+            this.pnlContenedorNotas.Name = "pnlContenedorNotas";
             this.pnlContenedorNotas.Size = new System.Drawing.Size(784, 390);
             this.pnlContenedorNotas.TabIndex = 0;
             // 

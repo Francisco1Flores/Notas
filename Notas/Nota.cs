@@ -9,10 +9,12 @@ namespace Notas
 {
     public class Nota : Panel
     {       
-        frmPrincipal frmVentanaPrincipal;
+        private frmPrincipal frmVentanaPrincipal;
 
-        const int Ancho = 160;
-        const int Alto = 152;        
+        private EventHandler NotaClick;
+
+        private const int Ancho = 160;
+        private const int Alto = 152;
 
         public Label lblTitulo {  get; set; }
         public Label lblTexto { get; set; }
@@ -22,13 +24,15 @@ namespace Notas
         {
             this.frmVentanaPrincipal = frmPadre;
 
-            this.Click += new EventHandler(this.AbrirNotaClick);
+            this.NotaClick = new EventHandler(this.AbrirNotaClick);
+
+            this.Click += NotaClick;
 
             this.Height = Ancho;
             this.Width = Alto;
             this.Margin = new Padding(20);
             
-            this.Cursor = Cursors.Hand;        
+            this.Cursor = Cursors.Hand;     
 
             this.lblTitulo = new Label();
             this.lblTexto = new Label();
@@ -47,7 +51,7 @@ namespace Notas
             this.lblTitulo.Visible = true;
             this.lblTitulo.Enabled = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Khaki;
-            this.lblTitulo.Click += new EventHandler(this.AbrirNotaClick);
+            this.lblTitulo.Click += NotaClick;            
 
             //lblTexto
             this.lblTexto.Text = Texto;
@@ -58,7 +62,7 @@ namespace Notas
             this.lblTexto.Visible = true;
             this.lblTexto.Enabled = true;
             this.lblTexto.BackColor = System.Drawing.Color.Khaki;
-            this.lblTexto.Click += new EventHandler(this.AbrirNotaClick);
+            this.lblTexto.Click += NotaClick;
 
             //lblFechaHora            
             this.lblFechaHora.Text = DateTime.Now.ToString();           
@@ -68,14 +72,17 @@ namespace Notas
             this.lblFechaHora.Visible = true;
             this.lblFechaHora.Enabled = true;
             this.lblFechaHora.BackColor = System.Drawing.Color.Khaki;
-            this.lblFechaHora.Click += new EventHandler(this.AbrirNotaClick);
+            this.lblFechaHora.Click += NotaClick;
+
+            this.Visible = true;
+            this.Enabled = true;
         }
 
         public void Actualizar(string Titulo, string Texto)
         {
             this.lblTitulo.Text = Titulo;
             this.lblTexto.Text = Texto;
-            this.lblFechaHora.Text = "Modificado " + DateTime.Now.ToString();
+            this.lblFechaHora.Text = "Mod " + DateTime.Now.ToString();            
         }
 
         public void AbrirNotaClick(object sender, EventArgs e)
