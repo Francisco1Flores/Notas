@@ -1,4 +1,6 @@
-﻿namespace Notas
+﻿using System;
+
+namespace Notas
 {
     partial class frmPrincipal
     {
@@ -27,7 +29,7 @@
         /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
-        {
+        {            
             this.btnNuevaNota = new System.Windows.Forms.Button();
             this.btnEliminarNota = new System.Windows.Forms.Button();
             this.txtTituloNota = new System.Windows.Forms.TextBox();
@@ -44,7 +46,7 @@
             // btnNuevaNota
             // 
             this.btnNuevaNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaNota.Location = new System.Drawing.Point(315, 19);
+            this.btnNuevaNota.Location = new System.Drawing.Point(329, 20);
             this.btnNuevaNota.Name = "btnNuevaNota";
             this.btnNuevaNota.Size = new System.Drawing.Size(150, 23);
             this.btnNuevaNota.TabIndex = 0;
@@ -57,9 +59,9 @@
             this.btnEliminarNota.BackColor = System.Drawing.Color.Red;
             this.btnEliminarNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarNota.Enabled = false;
-            this.btnEliminarNota.Location = new System.Drawing.Point(419, 314);
+            this.btnEliminarNota.Location = new System.Drawing.Point(367, 314);
             this.btnEliminarNota.Name = "btnEliminarNota";
-            this.btnEliminarNota.Size = new System.Drawing.Size(86, 23);
+            this.btnEliminarNota.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarNota.TabIndex = 1;
             this.btnEliminarNota.Text = "Eliminar";
             this.btnEliminarNota.UseVisualStyleBackColor = false;
@@ -72,7 +74,7 @@
             this.txtTituloNota.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTituloNota.Location = new System.Drawing.Point(283, 86);
             this.txtTituloNota.Name = "txtTituloNota";
-            this.txtTituloNota.Size = new System.Drawing.Size(208, 20);
+            this.txtTituloNota.Size = new System.Drawing.Size(245, 20);
             this.txtTituloNota.TabIndex = 3;
             this.txtTituloNota.Visible = false;
             // 
@@ -84,7 +86,7 @@
             this.txtTextoNota.Multiline = true;
             this.txtTextoNota.Name = "txtTextoNota";
             this.txtTextoNota.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtTextoNota.Size = new System.Drawing.Size(208, 183);
+            this.txtTextoNota.Size = new System.Drawing.Size(245, 183);
             this.txtTextoNota.TabIndex = 4;
             this.txtTextoNota.Visible = false;
             // 
@@ -106,7 +108,7 @@
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Enabled = false;
-            this.btnCancelar.Location = new System.Drawing.Point(338, 314);
+            this.btnCancelar.Location = new System.Drawing.Point(453, 314);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
@@ -117,16 +119,16 @@
             // 
             // pnlContenedorNotas
             // 
-            this.pnlContenedorNotas.Location = new System.Drawing.Point(12, 48);
+            this.pnlContenedorNotas.Location = new System.Drawing.Point(12, 49);
             this.pnlContenedorNotas.Name = "pnlContenedorNotas";
-            this.pnlContenedorNotas.Size = new System.Drawing.Size(784, 390);
+            this.pnlContenedorNotas.Size = new System.Drawing.Size(784, 389);
             this.pnlContenedorNotas.TabIndex = 0;
             // 
             // btnModificarNota
             // 
             this.btnModificarNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificarNota.Enabled = false;
-            this.btnModificarNota.Location = new System.Drawing.Point(257, 314);
+            this.btnModificarNota.Location = new System.Drawing.Point(282, 314);
             this.btnModificarNota.Name = "btnModificarNota";
             this.btnModificarNota.Size = new System.Drawing.Size(75, 23);
             this.btnModificarNota.TabIndex = 10;
