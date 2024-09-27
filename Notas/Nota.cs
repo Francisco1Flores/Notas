@@ -9,22 +9,20 @@ namespace Notas
 {
     public class Nota : Panel
     {       
-        private frmPrincipal frmVentanaPrincipal;
-
-        private EventHandler NotaClick;
+        private frmPrincipal frmVentanaPrincipal;        
 
         private const int Ancho = 160;
         private const int Alto = 152;
 
-        public Label lblTitulo {  get; set; }
+        public Label lblTitulo { get; set; }
         public Label lblTexto { get; set; }
-        public Label lblFechaHora {  get; set; }
+        public Label lblFechaHora { get; set; }
 
         public Nota(string Titulo, string Texto, frmPrincipal frmPadre)
         {
             this.frmVentanaPrincipal = frmPadre;
 
-            this.NotaClick = new EventHandler(this.AbrirNotaClick);
+            EventHandler NotaClick = new EventHandler(this.AbrirNotaClick);
 
             this.Click += NotaClick;
 

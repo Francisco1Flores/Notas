@@ -14,10 +14,7 @@ namespace Notas
 {
     public partial class frmPrincipal : Form
     {
-        private Nota NotaSeleccionada;
-
-        
-        FormWindowState UltimoEstadoFormulario;
+        private Nota NotaSeleccionada;               
 
         int CantidadNotas = 0; 
 
@@ -25,20 +22,14 @@ namespace Notas
         {                        
             InitializeComponent();
 
-            NotaSeleccionada = null;
-            
-            UltimoEstadoFormulario = this.WindowState;
+            NotaSeleccionada = null;                        
             
             this.Resize += CambioTamanoVentana;
         }
 
         private void CambioTamanoVentana(object sender, EventArgs e)
         {             
-            if (this.WindowState != UltimoEstadoFormulario)
-            {
-                ReacomodarElementos();
-                UltimoEstadoFormulario = this.WindowState;
-            }            
+                ReacomodarElementos();                            
         }
 
         private void btnNuevaNota_Click(object sender, EventArgs e)
@@ -119,8 +110,7 @@ namespace Notas
             this.btnNuevaNota.Left = (this.ClientSize.Width / 2) - (this.btnNuevaNota.Size.Width / 2);
 
             this.pnlContenedorNotas.Width = this.ClientSize.Width - 24;
-            this.pnlContenedorNotas.Height = this.ClientSize.Height - 60;
-            // aparecer y desaparecer barra de desplazamiento
+            this.pnlContenedorNotas.Height = this.ClientSize.Height - 60;            
 
             this.txtTituloNota.Left = (this.ClientSize.Width / 2) - (this.txtTituloNota.Size.Width / 2);
             this.txtTextoNota.Left = (this.ClientSize.Width / 2) - (this.txtTituloNota.Size.Width / 2);
@@ -132,9 +122,6 @@ namespace Notas
             this.btnModificarNota.Left = this.txtTextoNota.Left;
             this.btnCancelar.Left = this.txtTextoNota.Left + this.txtTextoNota.Width - this.btnCancelar.Width;
             this.btnEliminarNota.Left = this.btnGuardar.Left + this.btnGuardar.Width + 10;
-
-
-
         }
 
         public void AbrirNotaSeleccionada(Nota NotaSeleccionada)
