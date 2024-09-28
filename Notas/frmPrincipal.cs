@@ -24,13 +24,8 @@ namespace Notas
 
             NotaSeleccionada = null;                        
             
-            this.Resize += CambioTamanoVentana;
-        }
-
-        private void CambioTamanoVentana(object sender, EventArgs e)
-        {             
-                ReacomodarElementos();                            
-        }
+            this.Resize += ReacomodarElementos;
+        }        
 
         private void btnNuevaNota_Click(object sender, EventArgs e)
         {
@@ -105,7 +100,7 @@ namespace Notas
             }
         }       
 
-        private void ReacomodarElementos()
+        private void ReacomodarElementos(object sender, EventArgs e)
         {           
             this.btnNuevaNota.Left = (this.ClientSize.Width / 2) - (this.btnNuevaNota.Size.Width / 2);
 
